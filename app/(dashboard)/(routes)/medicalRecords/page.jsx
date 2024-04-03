@@ -13,88 +13,90 @@ import { Button } from "@/components/ui/button";
 import EditRecordModal from "@/components/editRecordModal";
 import AddNewRecordModal from "@/components/addNewRecordModal";
 import Navbar from "@/components/navbar";
+import PatientRecordTable from "@/components/patientRecordTable";
 
-const fakeTableData = [
-  {
-    Patients: "John Smith",
-    Diagnose: "Hypertension",
-    Therapy: "Medication",
-    Result: "Stable",
-    Doctor: "Dr. Johnson",
-    Price: "2000000",
-  },
-  {
-    Patients: "Sarah Jones",
-    Diagnose: "Migraine",
-    Therapy: "Acupuncture",
-    Result: "Improved",
-    Doctor: "Dr. Lee",
-    Price: "1500000",
-  },
-  {
-    Patients: "Michael Brown",
-    Diagnose: "Diabetes",
-    Therapy: "Diet Plan",
-    Result: "Controlled",
-    Doctor: "Dr. Martinez",
-    Price: "18000000",
-  },
-  {
-    Patients: "Emily Davis",
-    Diagnose: "Anxiety",
-    Therapy: "Therapy",
-    Result: "Recovered",
-    Doctor: "Dr. White",
-    Price: "220000",
-  },
-  {
-    Patients: "David Miller",
-    Diagnose: "Allergy",
-    Therapy: "Medication",
-    Result: "Relieved",
-    Doctor: "Dr. Garcia",
-    Price: "1900000",
-  },
-  {
-    Patients: "Lisa Wilson",
-    Diagnose: "Depression",
-    Therapy: "Counseling",
-    Result: "Improved",
-    Doctor: "Dr. Taylor",
-    Price: "2500000",
-  },
-  {
-    Patients: "Lisa Wilson",
-    Diagnose: "Depression",
-    Therapy: "Counseling",
-    Result: "Improved",
-    Doctor: "Dr. Taylor",
-    Price: "2500000",
-  },
-  {
-    Patients: "Lisa Wilson",
-    Diagnose: "Depression",
-    Therapy: "Counseling",
-    Result: "Improved",
-    Doctor: "Dr. Taylor",
-    Price: "2500000",
-  },
-];
+// fake data
+// const fakeTableData = [
+//   {
+//     Patients: "John Smith",
+//     Diagnose: "Hypertension",
+//     Therapy: "Medication",
+//     Result: "Stable",
+//     Doctor: "Dr. Johnson",
+//     Price: "2000000",
+//   },
+//   {
+//     Patients: "Sarah Jones",
+//     Diagnose: "Migraine",
+//     Therapy: "Acupuncture",
+//     Result: "Improved",
+//     Doctor: "Dr. Lee",
+//     Price: "1500000",
+//   },
+//   {
+//     Patients: "Michael Brown",
+//     Diagnose: "Diabetes",
+//     Therapy: "Diet Plan",
+//     Result: "Controlled",
+//     Doctor: "Dr. Martinez",
+//     Price: "18000000",
+//   },
+//   {
+//     Patients: "Emily Davis",
+//     Diagnose: "Anxiety",
+//     Therapy: "Therapy",
+//     Result: "Recovered",
+//     Doctor: "Dr. White",
+//     Price: "220000",
+//   },
+//   {
+//     Patients: "David Miller",
+//     Diagnose: "Allergy",
+//     Therapy: "Medication",
+//     Result: "Relieved",
+//     Doctor: "Dr. Garcia",
+//     Price: "1900000",
+//   },
+//   {
+//     Patients: "Lisa Wilson",
+//     Diagnose: "Depression",
+//     Therapy: "Counseling",
+//     Result: "Improved",
+//     Doctor: "Dr. Taylor",
+//     Price: "2500000",
+//   },
+//   {
+//     Patients: "Lisa Wilson",
+//     Diagnose: "Depression",
+//     Therapy: "Counseling",
+//     Result: "Improved",
+//     Doctor: "Dr. Taylor",
+//     Price: "2500000",
+//   },
+//   {
+//     Patients: "Lisa Wilson",
+//     Diagnose: "Depression",
+//     Therapy: "Counseling",
+//     Result: "Improved",
+//     Doctor: "Dr. Taylor",
+//     Price: "2500000",
+//   },
+// ];
 
 const MedicalRecords = () => {
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex h-full w-full flex-col">
       <Navbar title="Medical Record" />
 
       {/* content */}
-      <section className=" w-full space-y-4 bg-slate-400 p-12">
+      <section className="h-full w-full space-y-4 bg-slate-400 p-12">
         <div className="flex items-center gap-4">
           <Button variant="print">Print</Button>
           <AddNewRecordModal />
         </div>
 
-        <div className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full h-[90%] w-full overflow-y-auto rounded-2xl bg-[#f9f5f6] scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-sky-300/70  ">
-          <Table>
+        <div className=" h-[90%] w-full overflow-y-auto rounded-2xl bg-[#f9f5f6]  ">
+          {/* <Table>
             <TableHeader className="sticky top-0">
               <TableRow className="  bg-sky-300 hover:bg-sky-300">
                 <TableHead className="w-[16%]">Patients</TableHead>
@@ -145,7 +147,9 @@ const MedicalRecords = () => {
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+          </Table> */}
+
+          <PatientRecordTable />
         </div>
       </section>
     </div>
