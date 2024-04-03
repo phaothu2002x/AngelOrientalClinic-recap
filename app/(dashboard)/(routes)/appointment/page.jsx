@@ -8,11 +8,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import AddNewRecordModal from "@/components/addNewRecordModal";
 import Navbar from "@/components/navbar";
 import AppointmentCreateModal from "@/components/appointmentCreateModal";
 import AppointmentEditModal from "@/components/appointmentEditModal";
 
+import { Pagination } from "antd";
 //fake data
 const fakeTableData = [
   {
@@ -140,7 +140,7 @@ const AppointmentPage = () => {
           </div>
         </div>
 
-        <div className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full h-[90%] w-full overflow-y-auto rounded-t-lg bg-[#f9f5f6] scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-sky-300/70">
+        <div className=" h-[90%] w-full overflow-y-auto rounded-lg bg-[#f9f5f6]">
           <header className="sticky top-0 flex bg-sky-300 p-4">
             <div className="w-[20%] ">Patients</div>
             <div className="w-[20%]">Reason</div>
@@ -182,13 +182,6 @@ const AppointmentPage = () => {
                         </Button>
                       </div>
                       <div>
-                        {/* <Button
-                          variant="outline"
-                          className="rounded-full border-sky-400 text-sky-400"
-                          onClick={(e) => handleEditClick(e)}
-                        >
-                          Edit
-                        </Button> */}
                         <AppointmentEditModal />
                       </div>
                       <div className=" p-2">
@@ -208,6 +201,13 @@ const AppointmentPage = () => {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+          <div className="mt-3 flex items-center justify-center">
+            <Pagination
+              defaultCurrent={1}
+              total={fakeTableData?.length}
+              pageSize={2}
+            />
           </div>
         </div>
       </section>
